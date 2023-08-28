@@ -91,7 +91,7 @@ void print_python_list(PyObject *p)
  */
 void print_python_float(PyObject *p)
 {
-	double value;
+	double val;
 	char *new_pointer;
 
 	setbuf(stdout, NULL);
@@ -104,10 +104,9 @@ void print_python_float(PyObject *p)
 		return;
 	}
 
-	value = ((PyFloatObject *)(p))->ob_fval;
-	new_pointer = PyOS_double_to_string(value, 'r', 0, Py_DTSF_ADD_DOT_0, Py_DTST_FINITE);
+	val = ((PyFloatObject *)(p))->ob_fval;
+	new_pointer = PyOS_double_to_string(val, 'r', 0, Py_DTSF_ADD_DOT_0, Py_DTST_FINITE);
 
 	printf("  value: %s\n", new_pointer);
 	setbuf(stdout, NULL);
 }
-
