@@ -9,7 +9,7 @@
 void print_python_bytes(PyObject *p)
 {
 	char *byte_word;
-	long int weight, i, bound;
+	long int size, i, bound;
 
 	setbuf(stdout, NULL);
 
@@ -21,16 +21,16 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 
-	weight = ((PyVarObject *)(p))->ob_weight;
+	size = ((PyVarObject *)(p))->ob_size;
 	byte_word = ((PyBytesObject *)p)->ob_sval;
 
-	printf("  size: %ld\n", weight);
+	printf("  size: %ld\n", size);
 	printf("  trying string: %s\n", byte_word);
 
-	if (weight >= 10)
+	if (size >= 10)
 		bound = 10;
 	else
-		bound = weight + 1;
+		bound = size + 1;
 
 	printf("  first %ld bytes:", bound);
 
@@ -51,7 +51,7 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-	long int weight, i;
+	long int size, i;
 	PyListObject *point_list;
 	PyObject *obj_pointer;
 
@@ -65,13 +65,13 @@ void print_python_list(PyObject *p)
 		return;
 	}
 
-	weight = ((PyVarObject *)(p))->ob_weight;
+	size = ((PyVarObject *)(p))->ob_size;
 	point_list = (PyListObject *)p;
 
-	printf("[*] Size of the Python List = %ld\n", weight);
+	printf("[*] Size of the Python List = %ld\n", size);
 	printf("[*] Allocated = %ld\n", point_list->allocated);
 
-	for (i = 0; i < weight; i++)
+	for (i = 0; i < size; i++)
 	{
 		obj_pointer = point_list->ob_item[i];
 		printf("Element %ld: %s\n", i, ((obj_pointer)->ob_type)->tp_name);
@@ -110,3 +110,4 @@ void print_python_float(PyObject *p)
 	printf("  value: %s\n", new_pointer);
 	setbuf(stdout, NULL);
 }
+
