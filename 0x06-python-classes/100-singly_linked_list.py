@@ -30,13 +30,10 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
-"""The documentation as required by ALX program
-"""
-
 
 class SinglyLinkedList:
-   """The documentation as required by ALX program
-   """
+    """The documentation as required by ALX program
+    """
     def __str__(self):
         return_data = ""
         node_pointer = self.__head
