@@ -2,6 +2,7 @@
 """Documentation required by ALX program
 """
 
+
 class Square:
     """ A class that defines a square by its size
     """
@@ -47,7 +48,7 @@ class Square:
     @position.setter
     def position(self, value):
         """"Documentation required by ALX program
-	"""
+        """
         if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
         if len(value) != 2:
@@ -62,12 +63,12 @@ class Square:
 
     def area(self):
         """Documentation required by ALX program
-	"""
+        """
         return (self.__size ** 2)
 
     def my_print(self):
         """Documentation required by ALX program
-	"""
+        """
         if self.size == 0:
             print()
         else:
@@ -78,5 +79,4 @@ class Square:
                     print(" ", end='')
                 for j in range(self.size):
                     print("#", end='')
-                print()
-                
+                print() 
