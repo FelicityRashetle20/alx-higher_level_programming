@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-import math
 """Documentation asrequired by the ALX program
 """
+
+import math
 
 
 class MagicClass:
