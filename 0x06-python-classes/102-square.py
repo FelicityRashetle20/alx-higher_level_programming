@@ -26,7 +26,7 @@ class Square:
 
     def __init__(self, size=0):
         """ Documentation as required by the ALX program
-    	"""
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -36,19 +36,19 @@ class Square:
 
     def area(self):
         """ Documentation as required by the ALX program
-    	"""
+        """
         return (self.__size ** 2)
 
     @property
     def size(self):
         """ Documentation as required by the ALX program
-    	"""
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
         """ Documentation as required by the ALX program
-    	"""
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
