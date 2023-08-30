@@ -6,6 +6,6 @@ def magic_calculation(a, b):
         total_val = add(a, b)
         for i in range(4, 6):
             total_val = add(total_val, i)
-        return (total_val
+        return (total_val)
     else:
         return (sub(a, b))
