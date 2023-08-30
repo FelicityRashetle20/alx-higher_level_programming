@@ -4,11 +4,9 @@
 #include <stdlib.h>
 
 /**
- * struct listint_s - singly linked list
- * @n: integer
- * @next: points to the next node
- *
- * Description: Contains protype of all functions
+ * struct listint_s - defines a singly linked list
+ * @n: is an integer
+ * @next: points to the next node in the list
  */
 typedef struct listint_s
 {
